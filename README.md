@@ -8,7 +8,6 @@ Our current target audiences are young adults around the age of 18 who may have 
 
 ### Group Members 
 - Linda Giang
-- Erica Thu-Ha Huynh
 - Cas Cheng
 - Jiajia Lin
 - Linda Li
