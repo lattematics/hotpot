@@ -1,11 +1,9 @@
 import React from 'react';
-import Navbar from '../components/Navbar'; // Adjust path based on your folder structure
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   return (
     <div className="home-container">
-      <Navbar />
 
      <section className="hero">
         <div className="hero-content">
