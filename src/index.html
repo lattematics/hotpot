@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initialscale=1.0"/>
+  <title>Resources</title>
+  <link rel="stylesheet" href="style.css" />
+  <link 
+    rel="stylesheet" 
+    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+    integrity="sha384-jLKHWMZ3Wl1cX9O+u2KZ5aWlVH3v+LYHvzYwY83eeJDKUZbT1pnjE6txmZebh0G4" 
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">Logo</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#" class="active">Resources</a></li>
+        <li><a href="#">Quiz</a></li>
+        <li><a href="#">Forum</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="user-avatar">👩‍💼</div>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for resources by title, tag, category..." />
+      <button class="clear-btn"><i class="fas fa-times"></i></button>
+      <button class="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="filters">
+      <button class="filter-btn">Location <i class="fas fa-chevron-down"></i></button>
+      <button class="filter-btn">Age <i class="fas fa-chevron-down"></i></button>
+      <button class="filter-btn">Category <i class="fas fa-chevron-down"></i></button>
+      <button class="filter-btn">Saved Resources</button>
+      <button class="clear-all">Clear</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="resource-list" class="resource-grid"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
