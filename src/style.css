@@ -18,7 +18,7 @@ body {
   color: var(--text-dark);
 }
 
-/* Navbar (if you style it globally) */
+/* Navbar */
 .header {
   display: flex;
   align-items: center;
