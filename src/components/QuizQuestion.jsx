@@ -1,133 +1,179 @@
 import React, { useState } from 'react';
 
 export default function QuizQuestion() {
-  const [weeklySession, setWeeklySession] = useState(null);
-  const [deviceAccess, setDeviceAccess] = useState(null);
-  const [costImportance, setCostImportance] = useState(null);
-  const [overwhelmedFeeling, setOverwhelmedFeeling] = useState(null);
+  // Question states
+  const [submitted, setSubmitted] = useState(false);
+  const [formError, setFormError] = useState(""); 
+
+
+  const [settingPref, setSettingPref] = useState("");
+  const [affordable, setAffordable] = useState(null);
+  const [schoolStress, setSchoolStress] = useState(null);
+  const [workBalance, setWorkBalance] = useState(null);
+  const [anxiety, setAnxiety] = useState(null);
+  const [stressSigns, setStressSigns] = useState(null);
+  const [socialFeeling, setSocialFeeling] = useState("");
+  const [lowMood, setLowMood] = useState(null);
+  const [peerSupport, setPeerSupport] = useState(null);
+  const [identityAffirming, setIdentityAffirming] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // ✅ Validation check — are all questions answered?
+    if (
+      !settingPref ||
+      affordable === null ||
+      schoolStress === null ||
+      workBalance === null ||
+      anxiety === null ||
+      stressSigns === null ||
+      !socialFeeling ||
+      lowMood === null ||
+      peerSupport === null ||
+      identityAffirming === null
+    ) {
+      setFormError("⚠️ Please answer all the questions before submitting.");
+      setSubmitted(false);
+      return;
+    }
+
+    // If everything is filled:
+    setFormError("");
+    setSubmitted(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="quiz-form-page">
-      <form className="quiz-form">
-        <h2 className="quiz-title">Mental Health Resource Quiz</h2>
-        <p className="quiz-description">Answer honestly — it helps us match you with better resources!</p>
-
-        {/* 1. How much time */}
-        <div className="quiz-question">
-          <p>How much time can you realistically set aside each week for your mental wellness?</p>
-          <div className="quiz-options">
-            <label><input type="radio" name="time" /> None</label>
-            <label><input type="radio" name="time" /> 1–3 Hours</label>
-            <label><input type="radio" name="time" /> 3–5 Hours</label>
-            <label><input type="radio" name="time" /> 5–10 Hours</label>
-          </div>
+      {submitted && (
+        <div className="submit-message">
+          🎉 Your quiz was submitted successfully! We'll use your answers to match you with resources.
         </div>
+      )}
 
-        {/* 2. Manageable weekly sessions (Scale 1–5) */}
-        <div className="quiz-question">
-          <p>How manageable would it be for you to attend regular weekly sessions or programs?</p>
-          <div className="quiz-scale">
-            {[1, 2, 3, 4, 5].map((num) => (
-              <button
-                key={`weekly-${num}`}
-                type="button"
-                className={`scale-btn ${weeklySession === num ? 'selected' : ''}`}
-                onClick={() => setWeeklySession(num)}
-              >
-                {num}
-              </button>
-            ))}
-          </div>
-        </div>
+      {formError && <div className="error-message">{formError}</div>}
 
-        {/* 3. Preferred setting */}
+      <form className="quiz-form" onSubmit={handleSubmit}>
+        <h2 className="quiz-title">Personalized Resource Quiz</h2>
+        <p className="quiz-description">Answer honestly — it helps us match you with better support options!</p>
+
+        {/* 1. Setting Preference */}
         <div className="quiz-question">
           <p>What kind of setting do you prefer for support services?</p>
           <div className="quiz-options">
-            <label><input type="radio" name="setting" /> In-person</label>
-            <label><input type="radio" name="setting" /> Online only</label>
-            <label><input type="radio" name="setting" /> No preference</label>
+            <label>
+              <input type="radio" name="settingPref" value="in-person" onChange={() => setSettingPref("in-person")} />
+              In-person
+            </label>
+            <label>
+              <input type="radio" name="settingPref" value="online" onChange={() => setSettingPref("online")} />
+              Online only
+            </label>
+            <label>
+              <input type="radio" name="settingPref" value="no-preference" onChange={() => setSettingPref("no-preference")} />
+              No preference
+            </label>
           </div>
         </div>
 
-        {/* 4. Reliable access (Scale 1–5) */}
-        <div className="quiz-question">
-          <p>How reliable is your access to a device and internet for online sessions?</p>
-          <div className="quiz-scale">
-            {[1, 2, 3, 4, 5].map((num) => (
-              <button
-                key={`device-${num}`}
-                type="button"
-                className={`scale-btn ${deviceAccess === num ? 'selected' : ''}`}
-                onClick={() => setDeviceAccess(num)}
-              >
-                {num}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* 5. Importance of free/low-cost (Scale 1–5) */}
+        {/* 2. Affordable */}
         <div className="quiz-question">
           <p>How important is it for resources to be free or low-cost?</p>
           <div className="quiz-scale">
             {[1, 2, 3, 4, 5].map((num) => (
-              <button
-                key={`cost-${num}`}
-                type="button"
-                className={`scale-btn ${costImportance === num ? 'selected' : ''}`}
-                onClick={() => setCostImportance(num)}
-              >
-                {num}
-              </button>
+              <button key={`aff-${num}`} type="button" className={`scale-btn ${affordable === num ? 'selected' : ''}`} onClick={() => setAffordable(num)}>{num}</button>
             ))}
           </div>
         </div>
 
-        {/* 6. Paid options */}
+        {/* 3. School Stress */}
         <div className="quiz-question">
-          <p>Would you consider paid options if they better suit your needs?</p>
-          <div className="quiz-options">
-            <label><input type="radio" name="paid" /> Yes</label>
-            <label><input type="radio" name="paid" /> No</label>
-            <label><input type="radio" name="paid" /> Maybe, depending on cost</label>
+          <p>How manageable are your academic responsibilities right now?</p>
+          <div className="quiz-scale">
+            {[1, 2, 3, 4, 5].map((num) => (
+              <button key={`school-${num}`} type="button" className={`scale-btn ${schoolStress === num ? 'selected' : ''}`} onClick={() => setSchoolStress(num)}>{num}</button>
+            ))}
           </div>
         </div>
 
-        {/* 7. How often overwhelmed (Scale 1–5) */}
+        {/* 4. Work Balance */}
+        <div className="quiz-question">
+          <p>How confident do you feel in managing work or professional responsibilities?</p>
+          <div className="quiz-scale">
+            {[1, 2, 3, 4, 5].map((num) => (
+              <button key={`work-${num}`} type="button" className={`scale-btn ${workBalance === num ? 'selected' : ''}`} onClick={() => setWorkBalance(num)}>{num}</button>
+            ))}
+          </div>
+        </div>
+
+        {/* 5. Anxiety (overwhelmed) */}
         <div className="quiz-question">
           <p>How often do you feel overwhelmed or mentally drained?</p>
           <div className="quiz-scale">
             {[1, 2, 3, 4, 5].map((num) => (
-              <button
-                key={`overwhelmed-${num}`}
-                type="button"
-                className={`scale-btn ${overwhelmedFeeling === num ? 'selected' : ''}`}
-                onClick={() => setOverwhelmedFeeling(num)}
-              >
-                {num}
-              </button>
+              <button key={`anx-${num}`} type="button" className={`scale-btn ${anxiety === num ? 'selected' : ''}`} onClick={() => setAnxiety(num)}>{num}</button>
             ))}
           </div>
         </div>
 
-        {/* 8. Source of stress (Multiple Choice - Checkboxes) */}
+        {/* 6. Physical stress signs */}
         <div className="quiz-question">
-          <p>Which areas of your life are currently the biggest source of stress?</p>
-          <div className="quiz-options">
-            <label><input type="checkbox" name="stress" /> School / academics</label>
-            <label><input type="checkbox" name="stress" /> Work / job search</label>
-            <label><input type="checkbox" name="stress" /> Relationships</label>
-            <label><input type="checkbox" name="stress" /> Family</label>
-            <label><input type="checkbox" name="stress" /> Health</label>
-            <label><input type="checkbox" name="stress" /> Identity / self-esteem</label>
+          <p>How often do you experience physical signs of stress (headache, fatigue, racing thoughts)?</p>
+          <div className="quiz-scale">
+            {[1, 2, 3, 4, 5].map((num) => (
+              <button key={`signs-${num}`} type="button" className={`scale-btn ${stressSigns === num ? 'selected' : ''}`} onClick={() => setStressSigns(num)}>{num}</button>
+            ))}
           </div>
         </div>
 
-        {/* 9. Open-Ended Text */}
+        {/* 7. Social feeling */}
         <div className="quiz-question">
-          <p>What would a helpful support experience look like for you?</p>
-          <textarea className="text-input" placeholder="Type your answer here..." rows="4"></textarea>
+          <p>In social or high-pressure situations, how do you typically feel?</p>
+          <div className="quiz-options">
+            <label>
+              <input type="radio" name="socialFeeling" value="calm" onChange={() => setSocialFeeling("calm")} />
+              Calm or neutral
+            </label>
+            <label>
+              <input type="radio" name="socialFeeling" value="nervous" onChange={() => setSocialFeeling("nervous")} />
+              A little nervous
+            </label>
+            <label>
+              <input type="radio" name="socialFeeling" value="overwhelmed" onChange={() => setSocialFeeling("overwhelmed")} />
+              Overwhelmed or panicky
+            </label>
+          </div>
+        </div>
+
+        {/* 8. Low mood */}
+        <div className="quiz-question">
+          <p>How often do you feel disconnected from things you used to enjoy?</p>
+          <div className="quiz-scale">
+            {[1, 2, 3, 4, 5].map((num) => (
+              <button key={`low-${num}`} type="button" className={`scale-btn ${lowMood === num ? 'selected' : ''}`} onClick={() => setLowMood(num)}>{num}</button>
+            ))}
+          </div>
+        </div>
+
+        {/* 9. Peer support comfort */}
+        <div className="quiz-question">
+          <p>How comfortable are you sharing your thoughts in a group or peer setting?</p>
+          <div className="quiz-scale">
+            {[1, 2, 3, 4, 5].map((num) => (
+              <button key={`peer-${num}`} type="button" className={`scale-btn ${peerSupport === num ? 'selected' : ''}`} onClick={() => setPeerSupport(num)}>{num}</button>
+            ))}
+          </div>
+        </div>
+
+        {/* 10. Identity-based support */}
+        <div className="quiz-question">
+          <p>How important is it for you to connect with someone who understands your background or identity?</p>
+          <div className="quiz-scale">
+            {[1, 2, 3, 4, 5].map((num) => (
+              <button key={`identity-${num}`} type="button" className={`scale-btn ${identityAffirming === num ? 'selected' : ''}`} onClick={() => setIdentityAffirming(num)}>{num}</button>
+            ))}
+          </div>
         </div>
 
         <button type="submit" className="submit-btn">Submit</button>
