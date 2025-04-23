@@ -1,5 +1,3 @@
-// src/components/Resources.jsx
-
 import React, { useState, useEffect } from 'react';
 import '../style.css';                              // your global styles
 import '@fortawesome/fontawesome-free/css/all.css';  // FontAwesome icons
