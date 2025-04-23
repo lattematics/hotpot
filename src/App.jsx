@@ -1,14 +1,14 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import HomePage  from './components/Home';
-import QuizPage  from './components/QuizPage';
-import Resources from './components/Resources';
-import Navbar    from './components/Navbar';
+import HomePage   from './components/Home';
+import QuizPage   from './components/Quiz';       
+import Resources  from './components/Resources';
+import Navbar     from './components/Navbar';
 
 export default function App() {
   return (
-    <>
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/"          element={<HomePage />} />
@@ -16,6 +16,6 @@ export default function App() {
         <Route path="/quiz"      element={<QuizPage />} />
         
       </Routes>
-    </>
+    </Router>
   );
 }
