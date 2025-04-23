@@ -1,31 +1,22 @@
+// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-import HomePage     from './components/Home';
-import Resources    from './components/Resources';      
-import QuizPage     from './components/Quiz';
-import QuizQuestion from './components/QuizQuestion';
-import ForumPage    from './components/Forum';
-import AboutPage    from './components/About';
-import LoginPage    from './components/Login';
+import HomePage  from './components/Home';
+import QuizPage  from './components/QuizPage';
+import Resources from './components/Resources';
+import Navbar    from './components/Navbar';
 
-import Navbar       from './components/Navbar';
-
-function App() {
+export default function App() {
   return (
-    <Router>
+    <>
       <Navbar />
       <Routes>
-        <Route path="/"            element={<HomePage />} />
-        <Route path="/resources"   element={<Resources />} />    
-        <Route path="/quiz"        element={<QuizPage />} />
-        <Route path="/quiz/start"  element={<QuizQuestion />} />
-        <Route path="/forum"       element={<ForumPage />} />
-        <Route path="/about"       element={<AboutPage />} />
-        <Route path="/login"       element={<LoginPage />} />
+        <Route path="/"          element={<HomePage />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/quiz"      element={<QuizPage />} />
+        {/* you can add /forum, /about, /login routes here as you build them */}
       </Routes>
-    </Router>
+    </>
   );
 }
-
-export default App;
