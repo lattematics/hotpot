@@ -5,6 +5,8 @@ import Navbar    from './components/Navbar';
 import HomePage  from './components/Home';
 import Resources from './components/Resources';
 import QuizPage  from './components/Quiz';
+import QuizQuestion from './components/QuizQuestion';
+
 
 export default function App() {
   return (
@@ -14,6 +16,7 @@ export default function App() {
         <Route path="/"          element={<HomePage />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/quiz"      element={<QuizPage />} />
+        <Route path="/quiz/start" element={<QuizQuestion />} />
       </Routes>
     </>
   );
