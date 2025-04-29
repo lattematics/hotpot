@@ -99,50 +99,86 @@ body {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .help-card {
-  background-color: #FDFDE8;
+  background-color: #fffde8;
   padding: 20px;
   border-radius: 10px;
-  width: 220px;
+  width: 250px;
+  text-align: left;
+  text-decoration: none;
+  color: black;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: background-color 0.2s ease;
 }
 
 .help-card:hover {
   background-color: #fff9cc;
+  cursor: pointer;
 }
 
+.card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-top h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-top p {
+  font-size: 14px;
+  color: #555;
+}
+
+.arrow-icon {
+  align-self: flex-end;
+  font-size: 20px;
+  color: #4d0466;
+  margin-top: 10px;
+}
+
+
 .about-section {
-  padding: 50px 20px;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
   text-align: center;
+}
+
+.about-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
 }
 
 .about-content {
   display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  max-width: 1000px;
   margin: 0 auto;
-  gap: 40px;
+  flex-wrap: wrap;
   text-align: left;
-  margin-top: 40px;
+}
+
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 .about-img {
-  flex: 1;
-  max-width: 600px;
-  width: 100%;
-  border-radius: 12px;
-}
-.about-text {
-  flex: 1;
-}
-
-.about-text p {
-  margin-bottom: 20px;
-  font-size: 1.2rem;
+  width: 350px;
+  max-width: 100%;
+  height: auto;
 }
 
 .about-btn {
@@ -150,11 +186,10 @@ body {
   color: white;
   padding: 10px 20px;
   border: none;
-  margin-top: 15px;
+  margin-top: 20px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 15px;
-  margin-left: 150px;
+  margin-left: 200px;
 }
 
 .about-btn:hover {
