@@ -37,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-plugin-react-compiler": "^19.1.0-rc.1",
+    "eslint-plugin-react-hooks": "^6.0.0-rc.1"
   }
 }
