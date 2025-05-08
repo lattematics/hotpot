@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function QuizQuestion() {
-  // Question states
-  const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState(""); 
-
-
+  const [submitted, setSubmitted] = useState(false);
   const [settingPref, setSettingPref] = useState("");
   const [affordable, setAffordable] = useState(null);
   const [schoolStress, setSchoolStress] = useState(null);
@@ -17,10 +15,11 @@ export default function QuizQuestion() {
   const [peerSupport, setPeerSupport] = useState(null);
   const [identityAffirming, setIdentityAffirming] = useState(null);
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ✅ Validation check — are all questions answered?
     if (
       !settingPref ||
       affordable === null ||
@@ -33,16 +32,34 @@ export default function QuizQuestion() {
       peerSupport === null ||
       identityAffirming === null
     ) {
-      setFormError("⚠️ Please answer all the questions before submitting.");
-      setSubmitted(false);
+      setFormError("\u26A0\uFE0F Please answer all the questions before submitting.");
       return;
     }
 
-    // If everything is filled:
-    setFormError("");
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const tags = [];
+    if (settingPref === "online") tags.push("Online");
+    if (affordable >= 4) tags.push("Affordable");
+    if (schoolStress <= 2) tags.push("SchoolStress");
+    if (workBalance <= 2) tags.push("WorkBalance");
+    if (anxiety >= 4) tags.push("Anxiety");
+    if (stressSigns >= 4) tags.push("Anxiety");
+    if (stressSigns <= 2) tags.push("LowMood");
+    if (socialFeeling === "overwhelmed") tags.push("Anxiety");
+    if (lowMood >= 4) tags.push("LowMood");
+    if (peerSupport >= 4) tags.push("PeerSupport");
+    if (identityAffirming >= 4) tags.push("IdentityAffirming");
+
+    navigate("/results", { state: { tags } });
   };
+
+  const renderScale = (value, setter, key) => (
+    <div className="quiz-scale">
+      {[1, 2, 3, 4, 5].map((num) => (
+        <button key={`${key}-${num}`} type="button" className={`scale-btn ${value === num ? 'selected' : ''}`} onClick={() => setter(num)}>{num}</button>
+      ))}
+    </div>
+  );
+
 
   return (
     <div className="quiz-form-page">
