@@ -11,7 +11,7 @@ export default function Navbar() {
         <Link to="/quiz">Quiz</Link>
         <Link to="/forum">Forum</Link>
         <Link to="/about">About</Link>
-        <Link to="/login">Login</Link>
+        <Link to="/login"><img className="user" src="/img/user.png" alt="Login" /></Link>
       </nav>
     </header>
   );
