@@ -1,3 +1,9 @@
+/*
+  AI Usage: Approximately 10 lines of code was written with the help of Google AI Overview (Gemini).
+  The tool was used to learn how to create the login and signup forms. 
+  I could've looked through sources like YouTube, StackOverflow, etc but it was the first thing that appeared when I was searching. 
+*/
+
 import React, { useState } from 'react';
 import { db, auth } from "../firebase";
 import { getFirestore, setDoc, doc } from "firebase/firestore";
