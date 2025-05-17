@@ -13,7 +13,7 @@ function showMessage(message, divId){
   },5000);
 }
 
-function Login({ onLogin }) {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -41,7 +41,7 @@ function Login({ onLogin }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form class="log" onSubmit={handleSubmit}>
       <h2>Login</h2>
       <div id="logInMessage" class="messageDiv" style={{display: 'none'}}></div>
       <input

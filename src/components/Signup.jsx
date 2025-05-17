@@ -13,7 +13,7 @@ function showMessage(message, divId){
     },5000);
 }
 
-function Signup({ onSignup }) {
+function Signup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -50,7 +50,7 @@ function Signup({ onSignup }) {
 
 
     return (
-    <form onSubmit={handleSubmit}>
+    <form class="log" onSubmit={handleSubmit}>
         <h2>Sign Up</h2>
         <div id="signUpMessage" class="messageDiv" style={{display: 'none'}}></div>
         <input

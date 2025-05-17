@@ -409,3 +409,26 @@ textarea {
 .publish-btn:hover {
   background-color: #a369e0;
 }
+
+.formbtn {
+  margin: auto;
+}
+
+.log {
+  display: grid;
+  border: 1px solid #ddd;
+  background-color: #ccc;
+  align-items: vertical;
+  max-width: 70%;
+  margin: auto;
+}
+
+.log input {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.log button {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}

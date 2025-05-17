@@ -16,16 +16,6 @@ import Signup from './components/Signup';
 export default function App() {
   const [isLogin, setIsLogin] = useState(true);
 
-  const handleLogin = (username, password) => {
-    // Implement login logic here (e.g., API call)
-    console.log('Logging in:', username, password);
-  };
-
-  const handleSignup = (username, password) => {
-    // Implement signup logic here (e.g., API call)
-    console.log('Signing up:', username, password);
-  };
-
   return (
     <>
       <Navbar />
@@ -40,13 +30,13 @@ export default function App() {
       </Routes>
 
       <div>
-        <button onClick={() => setIsLogin(true)}>Login</button>
-        <button onClick={() => setIsLogin(false)}>Sign Up</button>
+        <button class="formbtn" onClick={() => setIsLogin(true)}>Login</button>
+        <button class="formbtn" onClick={() => setIsLogin(false)}>Sign Up</button>
 
         {isLogin ? (
-          <Login onLogin={handleLogin} />
+          <Login />
         ) : (
-          <Signup onSignup={handleSignup} />
+          <Signup />
         )}
       </div>
     </>
