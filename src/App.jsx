@@ -15,13 +15,10 @@ import QuizQuestion from './components/QuizQuestion';
 import ForumPage from './components/Forum';
 import { db } from './firebase';
 import Results from './components/Result';
-import Login from './components/Login';
-import Signup from './components/Signup';
+import LoginSignup from './components/LoginSignup'
 
 
 export default function App() {
-  const [isLogin, setIsLogin] = useState(true);
-
   return (
     <>
       <Navbar />
@@ -32,19 +29,8 @@ export default function App() {
         <Route path="/quiz/start" element={<QuizQuestion />} />
         <Route path="/forum" element={<ForumPage />} />
         <Route path="/results" element={<Results />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginSignup />} />
       </Routes>
-
-      <div>
-        <button class="formbtn" onClick={() => setIsLogin(true)}>Login</button>
-        <button class="formbtn" onClick={() => setIsLogin(false)}>Sign Up</button>
-
-        {isLogin ? (
-          <Login />
-        ) : (
-          <Signup />
-        )}
-      </div>
     </>
   );
 }
