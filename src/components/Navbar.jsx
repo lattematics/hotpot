@@ -7,8 +7,8 @@ export default function Navbar() {
       <div className="logo">HealthUs</div>
       <nav className="nav">
         <Link to="/">Home</Link>
-        <Link to="/resources">Resources</Link>
         <Link to="/quiz">Quiz</Link>
+        <Link to="/resources">Resources</Link>
         <Link to="/forum">Forum</Link>
         <Link to="/about">About</Link>
         <Link to="/login"><img className="user" src="/img/user.png" alt="Login" /></Link>
