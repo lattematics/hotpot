@@ -16,7 +16,7 @@ function showMessage(message, divId){
     messageDiv.style.opacity=1;
     setTimeout(function(){
         messageDiv.style.opacity=0;
-    },5000);
+    },3000);
 }
 
 function Signup() {
@@ -56,23 +56,27 @@ function Signup() {
 
 
     return (
-    <form class="log" onSubmit={handleSubmit}>
-        <h2>Sign Up</h2>
-        <div id="signUpMessage" class="messageDiv" style={{display: 'none'}}></div>
-        <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Sign Up</button>
-    </form>
+        <div>
+            <form id="Signup" class="log" onSubmit={handleSubmit}>
+                <h2 class="logh2">Sign Up</h2>
+                <label>Email</label>
+                <input
+                    type="text"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <label>Password</label>
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type="submit">Sign Up</button>
+                <div id="signUpMessage" class="messageDiv" style={{display: 'none'}}></div>
+            </form>
+        </div>
     );
 }
 

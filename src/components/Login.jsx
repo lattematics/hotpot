@@ -16,7 +16,7 @@ function showMessage(message, divId){
   messageDiv.style.opacity=1;
   setTimeout(function(){
       messageDiv.style.opacity=0;
-  },5000);
+  },3000);
 }
 
 function Login() {
@@ -33,7 +33,7 @@ function Login() {
 
         setTimeout(function () {
           window.location = '/';
-        }, 2000);
+        }, 1500);
     })
     .catch((error)=>{
         const errorCode=error.code;
@@ -47,23 +47,27 @@ function Login() {
   };
 
   return (
-    <form class="log" onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <div id="logInMessage" class="messageDiv" style={{display: 'none'}}></div>
-      <input
-        type="text"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Log In</button>
-    </form>
+    <div>
+      <form id="Login" class="log" onSubmit={handleSubmit}>
+        <h2 class="logh2">Login</h2>
+        <label>Email</label>
+        <input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label>Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Log In</button>
+        <div id="logInMessage" class="messageDiv" style={{display: 'none'}}><p>hello</p></div>
+      </form>
+    </div>
   );
 }
 

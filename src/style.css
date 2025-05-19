@@ -410,25 +410,55 @@ textarea {
   background-color: #a369e0;
 }
 
-.formbtn {
-  margin: auto;
+.logform {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 3rem;
+  justify-content: center;
 }
 
 .log {
-  display: grid;
-  border: 1px solid #ddd;
-  background-color: #ccc;
-  align-items: vertical;
-  max-width: 70%;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  border: 1px solid #e6ccff;
+  background-color: #e6ccff;
+  padding: 1rem;
+  min-height: 25rem;
+  width: 25rem;
+}
+
+.logh2 {
+  margin: 1rem 0.75rem 0.75rem 1rem;
+}
+
+.log label {
+  margin-top: 0.5rem;
+  margin-bottom: -0.5rem;
 }
 
 .log input {
-  margin: 0.5rem;
-  padding: 0.5rem;
+  border: none;
+  display: inline-table;
+  margin: 1rem;
+  padding: 0.75rem;
+  width: 20rem;
 }
 
 .log button {
-  margin: 0.5rem;
-  padding: 0.5rem;
+  background-color: #d6b3f0;
+  border: none;
+  margin: 1rem;
+  padding: 0.75rem;
+}
+
+#Signup {
+  margin-right: 2rem;
+}
+
+.messageDiv {
+  margin: auto;
+  background-color: #e6ccff;
+  color: #6713c1;
+  border: none;
 }
