@@ -28,7 +28,7 @@ function Login() {
 
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential)=>{
-        showMessage('login is successful', 'logInMessage');
+        showMessage('Login successful, sending you home •ᴗ•', 'logInMessage');
         const user=userCredential.user;
 
         setTimeout(function () {
@@ -38,10 +38,10 @@ function Login() {
     .catch((error)=>{
         const errorCode=error.code;
         if(errorCode==='auth/invalid-credential'){
-            showMessage('Incorrect Email or Password', 'logInMessage');
+            showMessage('Incorrect Email or Password, please try again.', 'logInMessage');
         }
         else{
-            showMessage('Account does not Exist', 'logInMessage');
+            showMessage('Account does not Exist, please sign up first.', 'logInMessage');
         }
     })
   };

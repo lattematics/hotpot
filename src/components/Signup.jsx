@@ -33,13 +33,11 @@ function Signup() {
                 email: email,
                 password: password
             };
-            showMessage('Account Created Successfully', 'signUpMessage');
+            showMessage('Account Created Successfully!', 'signUpMessage');
             const docRef=doc(db, "users", user.uid);
             setDoc(docRef,userData)
             .catch((error)=>{
                 console.error("error writing document", error);
-
-
             });
         })
         .catch((error)=>{
@@ -48,7 +46,7 @@ function Signup() {
                 showMessage('Email Address Already Exists!', 'signUpMessage');
             }
             else{
-                showMessage('unable to create User', 'signUpMessage');
+                showMessage('Unable to create account, try again later.', 'signUpMessage');
             }
         })
     };
@@ -74,7 +72,7 @@ function Signup() {
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <button type="submit">Sign Up</button>
-                <div id="signUpMessage" class="messageDiv" style={{display: 'none'}}></div>
+                <div id="signUpMessage" class="messageDiv" style={{display: 'none'}}><p>hello</p></div>
             </form>
         </div>
     );
