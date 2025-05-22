@@ -4,9 +4,8 @@
   I could've looked through sources like YouTube, StackOverflow, etc but it was the first thing that appeared when I was searching. 
 */
 
-import React, { useState } from 'react';
-import { db, auth } from "../firebase";
-import { getFirestore, setDoc, doc } from "firebase/firestore";
+import { useState } from 'react';
+import { auth } from "../firebase";
 import { signInWithEmailAndPassword }  from "firebase/auth";
 
 function showMessage(message, divId){
@@ -33,15 +32,15 @@ function Login() {
 
         setTimeout(function () {
           window.location = '/';
-        }, 1500);
+        }, 2000);
     })
     .catch((error)=>{
         const errorCode=error.code;
         if(errorCode==='auth/invalid-credential'){
-            showMessage('Incorrect Email or Password, please try again.', 'logInMessage');
+            showMessage('Incorrect email or password, please try again.', 'logInMessage');
         }
         else{
-            showMessage('Account does not Exist, please sign up first.', 'logInMessage');
+            showMessage('Account does not exist, please sign up.', 'logInMessage');
         }
     })
   };
@@ -49,6 +48,7 @@ function Login() {
   return (
     <div>
       <form id="Login" class="log" onSubmit={handleSubmit}>
+        <p>Already have an account?</p>
         <h2 class="logh2">Login</h2>
         <label>Email</label>
         <input

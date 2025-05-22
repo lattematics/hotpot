@@ -4,9 +4,9 @@
   I could've looked through sources like YouTube, StackOverflow, etc but it was the first thing that appeared when I was searching. 
 */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { db, auth } from "../firebase";
-import { getFirestore, setDoc, doc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { createUserWithEmailAndPassword }  from "firebase/auth";
 
 function showMessage(message, divId){
@@ -43,7 +43,7 @@ function Signup() {
         .catch((error)=>{
             const errorCode=error.code;
             if(errorCode==='auth/email-already-in-use'){
-                showMessage('Email Address Already Exists!', 'signUpMessage');
+                showMessage('Account already exists, try logging in.', 'signUpMessage');
             }
             else{
                 showMessage('Unable to create account, try again later.', 'signUpMessage');
@@ -56,6 +56,7 @@ function Signup() {
     return (
         <div>
             <form id="Signup" class="log" onSubmit={handleSubmit}>
+                <p>Create an account</p>
                 <h2 class="logh2">Sign Up</h2>
                 <label>Email</label>
                 <input

@@ -413,7 +413,7 @@ textarea {
 .logform {
   display: flex;
   flex-direction: row;
-  margin: 2rem 3rem;
+  margin: 3rem 3rem;
   justify-content: center;
 }
 
@@ -431,6 +431,12 @@ textarea {
 
 .logh2 {
   margin: 1rem 0.75rem 0.75rem 1rem;
+}
+
+.log p {
+  margin-top: 1rem;
+  margin-bottom: -0.75rem;
+  color: #a57de2;
 }
 
 .log label {
