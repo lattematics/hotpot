@@ -9,11 +9,5 @@ const updated = resources.map(r => ({
   image: `https://source.unsplash.com/300x150/?${encodeURIComponent(r.name)}`
 }));
 
-fs.writeFileSync(
-  filePath,
-  JSON.stringify(updated, null, 2),
-  'utf8'
-);
-
+fs.writeFileSync(filePath, JSON.stringify(updated, null, 2), 'utf8');
 console.log(`✅ Injected "image" into ${updated.length} resources.`);
-
