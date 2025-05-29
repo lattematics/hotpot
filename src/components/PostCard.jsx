@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PostCard = ({ user, content, isSaved, onSave, onComment }) => {
   return (
     <div className="post-card">

@@ -1,4 +1,3 @@
-import { React, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navbar    from './components/Navbar';
@@ -7,7 +6,6 @@ import Resources from './components/Resources';
 import QuizPage  from './components/Quiz';
 import QuizQuestion from './components/QuizQuestion';
 import ForumPage from './components/Forum';
-import { db } from './firebase';
 import Results from './components/Result';
 import LoginSignup from './components/LoginSignup'
 
