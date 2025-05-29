@@ -7,7 +7,8 @@ HealthUs is a web portal that compiles a variety of mental health resources that
 Our current target audiences are young adults around the age of 18 who may have limited financial resources, but we hope to eventually expand further to help all individuals who may benefit from our web portal. 
 
 **Presentation deck:** https://docs.google.com/presentation/d/1mPY7cmHgwxSR90EDKBrZHxxw7h6L5Bom9ZxSPH1Q0Ew/edit#slide=id.g33de76e39bf_5_2 
-**Final product:** N/A
+
+**Final product:** https://lattematics.github.io/hotpot/
 
 ### Group Members 
 - Linda Giang
@@ -16,7 +17,7 @@ Our current target audiences are young adults around the age of 18 who may have 
 - Linda Li
 
 ## Codebase 
-We have the basic webpage structure, along with several components:
+We have the basic web page structure, along with several components:
 - Nav
 - Forum posts
 - Resource cards
@@ -45,7 +46,21 @@ Our current code can be found in the `srs` file, feel free to contribute in any 
 3. Push the code using `git push origin `
 4. Our team will try to resolve any conflicts and merge the push
 
+### ALTERNATIVELY 
+You can take inspiration from our project, create your own repository, and set everything up how you like it. 
+Just give us credit for the idea. 
+
+## Suggested Features
+**This is the list of some features that we had originally planned to create but wasn't able to:** 
+- Have a robust resource database containing resources outside of Seattle
+- Resource database that is constantly being maintained
+- Adding more questions to the quiz
+- Adding more tags for our resources 
+- Adding tags for forum posts 
+- Quiz personalization results be saved in user's account 
+- Personalization spanning the different features (helps narrow down both resource and forum posts)
+
 ## Licence 
 HealthUs is licensed under the MIT License https://github.com/lattematics/hotpot/blob/main/LICENSE
 
-#### Thank you for your interest to make our project complete! 
+#### Thank you for your interest in making our project complete! 
