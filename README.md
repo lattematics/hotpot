@@ -8,7 +8,7 @@ Our current target audiences are young adults around the age of 18 who may have 
 
 **Presentation deck:** https://docs.google.com/presentation/d/1mPY7cmHgwxSR90EDKBrZHxxw7h6L5Bom9ZxSPH1Q0Ew/edit#slide=id.g33de76e39bf_5_2 
 
-**Final product:** https://lattematics.github.io/hotpot/
+**Final product:** https://healthus-5f0a9.web.app/
 
 ### Group Members 
 - Linda Giang
